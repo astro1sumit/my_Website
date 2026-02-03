@@ -19,7 +19,7 @@ import { featuredProjects } from "../../data/constants";
 const FeaturedProjects = ({ setOpenModal }) => {
     return (
         <FeaturedSection id="featured">
-            <FeaturedTitle>🚀 Featured Projects</FeaturedTitle>
+            <FeaturedTitle>🚀 top Projects</FeaturedTitle>
             <ProjectsGrid>
                 {featuredProjects.map((project, index) => (
                     <ProjectCard key={index}>

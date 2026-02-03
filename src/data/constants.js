@@ -12,26 +12,28 @@ export const Bio = {
         "Full Stack Developer | Java, React, Next.js, Node.js, Kotlin, C# | AI & SaaS Builder | MongoDB | MySQL | DSA | OOP | Open to Remote Roles",
     github: "https://github.com/astro1sumit",
     resume:
-        "https://drive.google.com/file/d/1Nos20ioj4EqdbRrGkypm3DqFziVKf2Vr/view?usp=sharing",
+        "https://drive.google.com/file/d/1X-FvbmOavJ7WhjkFD-A179LBDTD-q83T/view?usp=sharing",
     linkedin: "https://www.linkedin.com/in/sumit-maurya-57191a255/",
-    twitter: "",
+    Leetcode: "https://leetcode.com/u/ASTROSUMIT/",
     insta: "",
 };
 
 export const featuredProjects = [
     {
-        title: "QR Barcode Generator",
+        title: "Full-Stack E-Commerce Platform",
         slug: "ai-blog-assistant",
         description:
-            "🔗 QR Barcode Generator – The QR Barcode Generator is a smart and efficient tool that instantly creates custom QR codes and barcodes for any text, link, or data with just one click. It supports generating codes for text, URLs, contact details, and product IDs, along with instant download and share options in PNG or SVG formats. The tool offers customization for color, size, and background, and provides a real-time preview before downloading. Built with React, Node.js, Express, HTML, CSS, and JavaScript, and powered by libraries like qrcode and JsBarcode, it ensures secure and fast code generation. This project helped me understand how to integrate dynamic libraries into real-world web apps, manage real-time data rendering, and build responsive tools that simplify daily tasks like generating shareable and scannable codes efficiently.",
+            "🔗 This project showcases a complete e-commerce solution built with React.js and Spring Boot. It features secure authentication using Spring Security and JWT, efficient PostgreSQL database management, and essential functionalities like product browsing, cart management, and checkout. The application reflects strong full-stack development and real-world implementation skills.",
         images: [
-            "../project/ai-blog-1.png",
-            "../project/ai-blog-2.png",
-            "../project/ai-blog-3.png",
+            "../project/shop-1.png",
+            "../project/shop-2.png",
+            "../project/shop-3.png",
+            "../project/shop-4.png",
         ],
-        stack: ["JavaScript", "HTML", "CSS"],
-        url: "https://github.com/astro1sumit/QRCodeGenerator",
+        stack: ["React", "Node.js", "SpringBoot", "Postgres", "RESTful API", "Spring Security and JWT", "end-to-end user transactions"],
+        url: "https://e-shop-sigma-rosy.vercel.app/",
     },
+
     {
         title: "Barcode & QR Code Scanner",
         slug: "score-zyada",
@@ -425,7 +427,7 @@ export const projects = [
             "🔹Excited 🎉 to share a new UI project I designed in Figma – a 3D carousel slider! ️  This isn't just any slider – it's built for flexibility, perfect for showcasing anything from products to campaigns. The design process was a journey of brainstorming and iteration. I used a mix of Figma's powerful tools and Canva for the finer touches to create a visually stunning and user-friendly experience. 💳📊🚀✨",
         image:"../project/f1.png",
         tags: [
-            "Figma",
+            "Figma", "Design"
         ],
         category: "Figma",
         github: "https://www.figma.com/design/GGPQcDwwKEUNEcpvhVu4tO/Untitled?node-id=0-1&p=f",
@@ -439,291 +441,117 @@ export const projects = [
             },
         ],
     },
-    // {
-    //     id: 16,
-    //     title: "GrandDoor Artisanry",
-    //     date: "",
-    //     description:
-    //         "🔹 GrandDoor Artisanry A luxurious platform showcasing handcrafted doors with customizable options. Combines elegance and functionality to deliver an unparalleled user experience while managing orders and inquiries efficiently. 🚪✨🎨",
-    //     image:
-    //         "https://i.pinimg.com/736x/45/30/1f/45301f233bb772321aa0a70e478b8669.jpg",
-    //     tags: ["Html", "Css", "Java Script", "Bootstrap", "Php", "Ajax"],
-    //     category: "Website & CRM",
-    //     github: "#",
-    //     webapp: "https://granddoor.in/",
-    //     member: [
-    //         {
-    //             name: "Manish Gupta",
-    //             img: "https://avatars.githubusercontent.com/u/69005837?v=4",
-    //             linkedin: "https://www.linkedin.com/in/manishgupta724464/",
-    //             github: "https://github.com/manishgupta72/",
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 0,
-    //     title: "Youtube Clone",
-    //     date: "Nov 2023 - Dec 2023",
-    //     description:
-    //         "A YouTube clone  facilitating video discovery, viewing, and community engagement. Emulating the popular platform, it prioritizes seamless navigation. with search facilities and trending features.",
-    //     image:
-    //         "https://i.pinimg.com/736x/68/00/78/68007842618802e65c30d40e3f119fc6.jpg",
-    //     tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Redux"],
-    //     category: "web app",
-    //     github:
-    //         "https://github.com/manishgupta72/Youtube-clone/tree/main/youtube-clone",
-    //     webapp: "https://youtube-clone-reacts.netlify.app/",
-    //     member: [
-    //         {
-    //             name: "Manish Gupta",
-    //             img: "https://avatars.githubusercontent.com/u/69005837?v=4",
-    //             linkedin: "https://www.linkedin.com/in/manishgupta724464/",
-    //             github: "https://github.com/manishgupta72/",
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 10,
-    //     title: "Insta-Clone",
-    //     date: "Jan 2024",
-    //     description:
-    //         "Express Node backend powers this Instagram clone, replicating the popular platform's features. With a responsive design, users can share, like, and comment on photos, while the backend manages data and interactions. The combination delivers a seamless experience mirroring the functionality of Instagram with server-side support",
-    //     image:
-    //         "https://i.pinimg.com/736x/d9/72/fd/d972fdd09d1588feb59c942c253d4746.jpg",
-    //     tags: ["React Js", "MongoDb", "Node Js", "Express Js", "EJB"],
-    //     category: "web app",
-    //     github:
-    //         "https://github.com/manishgupta72/Instagram-Clone/tree/main/instaclone",
-    //     webapp:
-    //         "https://github.com/manishgupta72/Instagram-Clone/tree/main/instaclone",
-    //     member: [
-    //         {
-    //             name: "Manish Gupta",
-    //             img: "https://avatars.githubusercontent.com/u/69005837?v=4",
-    //             linkedin: "https://www.linkedin.com/in/manishgupta724464/",
-    //             github: "https://github.com/manishgupta72/",
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 11,
-    //     title: "Pintrest Profile",
-    //     date: "Jan 2024",
-    //     description:
-    //         "This Express Node backend-driven Pinterest profile clone replicates the platform's aesthetic, enabling users to fetch and display all posts seamlessly. With responsive design, users experience the familiar Pinterest profile layout, showcasing an array of posts. The backend efficiently manages data retrieval, enhancing the overall user experience.",
-    //     image:
-    //         "https://i.pinimg.com/736x/ec/35/c4/ec35c4047f654573d7430976d88f892d.jpg",
-    //     tags: ["React Js", "MongoDb", "Node Js", "Express Js", "EJB"],
-    //     category: "web app",
-    //     github:
-    //         "https://github.com/manishgupta72/pintrest-clone/tree/main/pintrest",
-    //     webapp:
-    //         "https://github.com/manishgupta72/pintrest-clone/tree/main/pintrest",
-    //     member: [
-    //         {
-    //             name: "Manish Gupta",
-    //             img: "https://avatars.githubusercontent.com/u/69005837?v=4",
-    //             linkedin: "https://www.linkedin.com/in/manishgupta724464/",
-    //             github: "https://github.com/manishgupta72/",
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 1,
-    //     title: "SocialMedia UI",
-    //     date: "NOV 2023",
-    //     description:
-    //         "This social media UI clone replicates the popular platform's design with a sleek and intuitive interface. Featuring a familiar layout, it includes a news feed for seamless content consumption, profile pages for personal customization, and a chat function for real-time communication.",
-    //     image:
-    //         "https://i.pinimg.com/736x/9e/4f/87/9e4f87176b3c6c3d230c46afc0c29622.jpg",
-    //     tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Redux"],
-    //     category: "web app",
-    //     github:
-    //         "https://github.com/manishgupta72/SocialMediaAppUI/tree/main/client",
-    //     webapp: "https://insta-clone-frontend.netlify.app/",
-    //     member: [
-    //         {
-    //             name: "Manish Gupta",
-    //             img: "https://avatars.githubusercontent.com/u/69005837?v=4",
-    //             linkedin: "https://www.linkedin.com/in/manishgupta724464/",
-    //             github: "https://github.com/manishgupta72/",
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 2,
-    //     title: "Book Store",
-    //     date: "NOV 2023 ",
-    //     description:
-    //         "This book store application includes a user-friendly interface for adding and fetching books, seamlessly managed through an admin panel. Users can easily contribute new books, while the admin panel ensures efficient content management. The streamlined design enhances accessibility, making it a convenient platform for book enthusiasts and administrators alike",
-    //     image:
-    //         "https://i.pinimg.com/736x/e7/ec/b5/e7ecb5ea5d935a0ae0e337595dc1f78f.jpg",
-    //     tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Context"],
-    //     category: "Web App",
-    //     github: "https://github.com/manishgupta72/bookstore",
-    //     webapp: "https://bookstore-ten-khaki.vercel.app/books",
-    //     member: [
-    //         {
-    //             name: "Manish Gupta",
-    //             img: "https://avatars.githubusercontent.com/u/69005837?v=4",
-    //             linkedin: "https://www.linkedin.com/in/manishgupta724464/",
-    //             github: "https://github.com/manishgupta72/",
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 3,
-    //     title: "textUtills",
-    //     date: "Oct 2023",
-    //     description:
-    //         "This text-based operator offers essential functionalities like converting text to uppercase or lowercase, providing character count, and performing various text operations. Users can manipulate and analyze text easily, enhancing efficiency in tasks such as formatting and data processing, making it a versatile tool for textual ",
-    //     image:
-    //         "https://i.pinimg.com/736x/d8/7b/3c/d87b3c2003a309cdcc49bf2cd23fd1d9.jpg",
-    //     tags: ["React Js"],
-    //     category: "Web app",
-    //     github:
-    //         "https://github.com/manishgupta72/TextUtillsApp/tree/main/text-tutils",
-    //     webapp: "https://textutills-manish.netlify.app/",
-    //     member: [
-    //         {
-    //             name: "Manish Gupta",
-    //             img: "https://avatars.githubusercontent.com/u/69005837?v=4",
-    //             linkedin: "https://www.linkedin.com/in/manishgupta724464/",
-    //             github: "https://github.com/manishgupta72/",
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 10,
-    //     title: "KeepNoteApp",
-    //     date: "SEP 2023 ",
-    //     description:
-    //         "This React-based note-taking app simplifies organization and productivity. Users can create, and delete notes with a responsive and intuitive interface. The app offers a seamless experience for capturing and managing ideas, tasks, and reminders, enhancing efficiency in daily note-taking and organization",
-    //     image:
-    //         "https://i.pinimg.com/736x/aa/2f/e5/aa2fe50f38044b9688383ab8e2725c17.jpg",
-    //     tags: ["React JS", "JavaScript"],
-    //     category: "web app",
-    //     github:
-    //         "https://github.com/manishgupta72/Keep-Notes-App/tree/main/keep-notes-app",
-    //     webapp: "https://keep-notes-app-react.netlify.app",
-    //     member: [
-    //         {
-    //             name: "Manish Gupta",
-    //             img: "https://avatars.githubusercontent.com/u/69005837?v=4",
-    //             linkedin: "https://www.linkedin.com/in/manishgupta724464/",
-    //             github: "https://github.com/manishgupta72/",
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 4,
-    //     title: "CRUD JSON SERVER",
-    //     date: "NOV 2023",
-    //     description:
-    //         "This React CRUD web app facilitates seamless Create, Read, Update, and Delete operations. With an intuitive user interface, users can effortlessly manage data, add new entries, modify existing ones, and remove records. The app ensures a smooth and efficient experience for interacting with dynamic content in a web environment.",
-    //     image:
-    //         "https://i.pinimg.com/736x/2b/e2/fb/2be2fb313c9cdc524bf66afb1a75b911.jpg",
-    //     tags: ["React Js", "JSON Server"],
-    //     category: "web app",
-    //     github:
-    //         "https://github.com/manishgupta72/CRUD-IN-REACT/tree/main/CRUD%20REACT",
-    //     webapp: "https://usercrudoperation.netlify.app",
-    //     member: [
-    //         {
-    //             name: "Manish Gupta",
-    //             img: "https://avatars.githubusercontent.com/u/69005837?v=4",
-    //             linkedin: "https://www.linkedin.com/in/manishgupta724464/",
-    //             github: "https://github.com/manishgupta72/",
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 5,
-    //     title: "Weather App",
-    //     date: "JULY 2023",
-    //     description:
-    //         "This JavaScript weather app provides real-time weather information with a clean and user-friendly interface. Users can easily access current conditions, forecasts, and temperature details for any location. The app integrates with weather APIs, delivering accurate and up-to-date meteorological data, enhancing the user's ability to plan and stay informed.",
-    //     image:
-    //         "https://i.pinimg.com/736x/81/b6/19/81b619ca46e338e5690fa06c476e33b5.jpg",
-    //     tags: ["HTML", "CSS", "JAVA SCRIPT"],
-    //     category: "web app",
-    //     github:
-    //         "https://github.com/manishgupta72/Weather-App-js/tree/main/Whether%20App",
-    //     webapp: "https://weatherapp-manish.netlify.app/",
-    //     member: [
-    //         {
-    //             name: "Manish Gupta",
-    //             img: "https://avatars.githubusercontent.com/u/69005837?v=4",
-    //             linkedin: "https://www.linkedin.com/in/manishgupta724464/",
-    //             github: "https://github.com/manishgupta72/",
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 6,
-    //     title: "Food App UI",
-    //     date: "DEC 2023",
-    //     description:
-    //         "Sleek and user-friendly food app UI with vibrant visuals, easy navigation, and quick ordering features for a delightful dining experience.",
-    //     image:
-    //         "https://i.pinimg.com/736x/b4/56/28/b4562885bf99f8731956c42a9d7032db.jpg",
-    //     tags: ["React Js", "JSON"],
-    //     category: "web app",
-    //     github: "https://github.com/manishgupta72/FoodApp/tree/main/FOODAPP/mern",
-    //     webapp: "https://foodorderingonlineapp.netlify.app/",
-    //     member: [
-    //         {
-    //             name: "Manish Gupta",
-    //             img: "https://avatars.githubusercontent.com/u/69005837?v=4",
-    //             linkedin: "https://www.linkedin.com/in/manishgupta724464/",
-    //             github: "https://github.com/manishgupta72/",
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 7,
-    //     title: "Calculator - Js",
-    //     date: "AUG 2022",
-    //     description:
-    //         "A simple and responsive calculator using HTML, CSS, and JS for basic arithmetic operations with an intuitive design for user-friendly calculations.",
-    //     image:
-    //         "https://i.pinimg.com/736x/ca/5a/4e/ca5a4e6061c4bff743c4fbcea4221761.jpg",
-    //     tags: ["Java Sript", "Html", "Css"],
-    //     category: "Web App",
-    //     github:
-    //         "https://github.com/manishgupta72/Calculator-js/tree/main/calculator",
-    //     webapp: "https://calculator-manishgupta.netlify.app/",
-    //     member: [
-    //         {
-    //             name: "Manish Gupta",
-    //             img: "https://avatars.githubusercontent.com/u/69005837?v=4",
-    //             linkedin: "https://www.linkedin.com/in/manishgupta724464/",
-    //             github: "https://github.com/manishgupta72/",
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 8,
-    //     title: "Password Generator",
-    //     date: "OCT 2023",
-    //     description:
-    //         "This password generator, crafted with HTML, CSS, and JS, provides a secure solution for generating customizable passwords. Featuring a user-friendly interface, it allows users to adjust parameters such as length and character types, ensuring the creation of strong and unique passwords for enhanced online security.",
-    //     image:
-    //         "https://i.pinimg.com/736x/85/07/e8/8507e8afda714c2e19a6953ecec2fa35.jpg",
-    //     tags: ["Html", "Css", "Java Script"],
-    //     category: "web app",
-    //     github:
-    //         "https://github.com/manishgupta72/Password-generator-js/tree/main/passwordGenerator",
-    //     webapp: "https://password-generator-manishgupta.netlify.app/",
-    //     member: [
-    //         {
-    //             name: "Manish Gupta",
-    //             img: "https://avatars.githubusercontent.com/u/69005837?v=4",
-    //             linkedin: "https://www.linkedin.com/in/manishgupta724464/",
-    //             github: "https://github.com/manishgupta72/",
-    //         },
-    //     ],
-    // },
+
+    {
+        id: 16,
+        title: "Full-Stack E-Commerce Platform",
+        description:
+            "🔗 In conclusion, this full-scale e-commerce application demonstrates strong full-stack development capabilities by integrating a dynamic React.js frontend with a secure and scalable Spring Boot backend. The use of Spring Security and JWT ensures robust authentication and authorization, protecting sensitive user data and application resources. A well-structured PostgreSQL database efficiently manages complex relationships between users, products, and orders. Core e-commerce features such as product browsing, shopping cart management, and a seamless checkout process provide a complete end-to-end shopping experience. Overall, the project highlights proficiency in modern web technologies, secure API design, and real-world application development.",
+        image: "../project/shop-2.png",
+        category: "Website",
+        tags: ["React", "Node.js", "SpringBoot", "Postgres", "RESTful API", "Spring Security and JWT", "end-to-end user transactions"],
+        webapp: "https://e-shop-sigma-rosy.vercel.app/",
+        github:"https://github.com/astro1sumit/e-shop",
+        member: [
+            {
+                name: "Sumit Maurya",
+                img: hero,
+                linkedin: "https://www.linkedin.com/in/sumit-maurya-57191a255/",
+                github: "https://github.com/astro1sumit",
+            },
+        ],
+    },
+
+    {
+        id: 17,
+        title: "E-commerce Website Figma Design",
+        description:"This Figma design presents a clean, intuitive interface that balances typography and layout for clear user interaction. It showcases visually cohesive elements with consistent spacing, hierarchy, and color use to guide navigation. The layout supports user tasks efficiently, reflecting thoughtful UI/UX principles and an organized structure for usability and engagement.",
+        image: "../project/figma-2.png",
+        category: "Design",
+        tags: ["Figma", "Design"],
+        webapp: "https://www.figma.com/design/XEb5zgsQ1Z8VxOm6qcuGbN/Untitled",
+        github:"https://www.figma.com/design/XEb5zgsQ1Z8VxOm6qcuGbN/Untitled",
+        member: [
+            {
+                name: "Sumit Maurya",
+                img: hero,
+                linkedin: "https://www.linkedin.com/in/sumit-maurya-57191a255/",
+                github: "https://github.com/astro1sumit",
+            },
+        ],
+    },
+    {
+        id: 18,
+        title: "Music Website Figma Design",
+        description:"This Figma design presents a clean, intuitive interface that balances typography and layout for clear user interaction. It showcases visually cohesive elements with consistent spacing, hierarchy, and color use to guide navigation. The layout supports user tasks efficiently, reflecting thoughtful UI/UX principles and an organized structure for usability and engagement.",
+        image: "../project/figma-3.png",
+        category: "Design",
+        tags: ["Figma", "Design"],
+        webapp: "https://www.figma.com/design/ZDMDD0Z0Ij1dc4OqVYBD74/Music-Player-Website---App--Melodies---Community-?node-id=0-1&p=f",
+        github: "https://www.figma.com/design/ZDMDD0Z0Ij1dc4OqVYBD74/Music-Player-Website---App--Melodies---Community-?node-id=0-1&p=f",
+        member: [
+            {
+                name: "Sumit Maurya",
+                img: hero,
+                linkedin: "https://www.linkedin.com/in/sumit-maurya-57191a255/",
+                github: "https://github.com/astro1sumit",
+            },
+        ],
+    },
+    {
+        id: 19,
+        title: "Real Estate Website Figma Design",
+        description:"This Figma design presents a clean, intuitive interface that balances typography and layout for clear user interaction. It showcases visually cohesive elements with consistent spacing, hierarchy, and color use to guide navigation. The layout supports user tasks efficiently, reflecting thoughtful UI/UX principles and an organized structure for usability and engagement.",
+        image: "../project/figma-4.png",
+        category: "Design",
+        tags: ["Figma", "Design"],
+        webapp: "https://www.figma.com/design/WNjRqKsoS9Q2Y5Wtv0nbc9/Website-of-architects---free-website--Community-?node-id=0-1&p=f",
+        github: "https://www.figma.com/design/WNjRqKsoS9Q2Y5Wtv0nbc9/Website-of-architects---free-website--Community-?node-id=0-1&p=f",
+        member: [
+            {
+                name: "Sumit Maurya",
+                img: hero,
+                linkedin: "https://www.linkedin.com/in/sumit-maurya-57191a255/",
+                github: "https://github.com/astro1sumit",
+            },
+        ],
+    },
+    {
+        id: 20,
+        title: "Books Service REST API OpenAPI",
+        description:"This repository contains a Books Service REST API developed using Spring Boot, designed to perform complete CRUD operations for managing book data. The project integrates Swagger / OpenAPI for clear, interactive API documentation, making endpoints easy to understand and test. It follows clean RESTful principles with proper request mappings, response handling, and layered architecture. The application demonstrates backend development skills including controller design, service logic, and repository usage. Swagger UI enables developers to visualize and validate APIs efficiently. Overall, this project highlights strong knowledge of Spring Boot, REST APIs, and API documentation best practices, making it suitable for real-world backend applications and portfolio showcasing.",
+        image: "../project/Backend-1.png",
+        category: "Backend",
+        tags: ["Spring Boot", "REST API", "Backend","CRUD operations", "Swagger / OpenAPI", "RESTful principles", "backend"],
+        webapp: "https://github.com/astro1sumit/books_service_Swagger_OpenAPI",
+        github: "https://github.com/astro1sumit/books_service_Swagger_OpenAPI",
+        member: [
+            {
+                name: "Sumit Maurya",
+                img: hero,
+                linkedin: "https://www.linkedin.com/in/sumit-maurya-57191a255/",
+                github: "https://github.com/astro1sumit",
+            },
+        ],
+    },
+    {
+        id: 21,
+        title: "Event-Booking-System-API",
+        description:"This repository hosts the Event-Booking-System-API, a RESTful backend built with Spring Boot to manage events and user bookings. It supports full CRUD operations for events, users, and reservations, ensuring seamless interaction between clients and the server. The API uses clear routing, request validation, and structured responses for reliability and ease of use. Proper exception handling and service layering improve maintainability and scalability. This project showcases expertise in backend development, RESTful design principles, and building event-driven services. Ideal for real-world use cases, it demonstrates practical skills in API design and server-side application development, making it a strong addition to your professional portfolio.",
+        image: "../project/Backend-2.png",
+        category: "Backend",
+        tags: ["Spring Boot", "REST API", "Backend","CRUD operations", "Swagger / OpenAPI", "RESTful principles", "backend"],
+        webapp: "https://github.com/astro1sumit/Event-Booking-System-API",
+        github: "https://github.com/astro1sumit/Event-Booking-System-API",
+        member: [
+            {
+                name: "Sumit Maurya",
+                img: hero,
+                linkedin: "https://www.linkedin.com/in/sumit-maurya-57191a255/",
+                github: "https://github.com/astro1sumit",
+            },
+        ],
+    },
 ];
 
 export const TimeLineData = [
