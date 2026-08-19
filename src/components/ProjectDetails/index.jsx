@@ -2,8 +2,9 @@ import { CloseRounded, GitHub, LinkedIn } from '@mui/icons-material';
 import { Modal } from '@mui/material';
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   width: 100%;
   height: 100%;
   position: fixed;
@@ -18,7 +19,7 @@ const Container = styled.div`
   z-index: 1200;
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   max-width: 900px;
   width: 100%;
   background: linear-gradient(135deg, #1e1e2f, #29293d);
@@ -29,18 +30,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  animation: fadeIn 0.3s ease-in-out;
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
 `;
 
 const Title = styled.h2`
@@ -105,7 +94,7 @@ const Tags = styled.div`
   margin-bottom: 24px;
 `;
 
-const Tag = styled.div`
+const Tag = styled(motion.div)`
   font-size: 14px;
   font-weight: 500;
   color: white;
@@ -115,12 +104,11 @@ const Tag = styled.div`
   background: linear-gradient(135deg,rgb(176, 76, 230),rgb(32, 40, 190));
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
   &:hover {
     background: ${({ theme }) => theme.primary};
     color: #fff;
-    transform: translateY(-2px) scale(1.05);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
   }
 `;
@@ -230,15 +218,34 @@ const index = ({ openModal, setOpenModal }) => {
 
     return (
         <Modal open={openModal.state} onClose={() => setOpenModal({ state: false, project: null })}>
-            <Container>
-                <Wrapper>
+            <Container
+                data-lenis-prevent
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25 }}
+            >
+                <Wrapper
+                    initial={{ opacity: 0, scale: 0.9, y: 24 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.92, y: 16 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                >
                     <CloseIcon onClick={() => setOpenModal({ state: false, project: null })} />
                     <Image src={project?.image} alt={project?.title} />
                     <Title>{project?.title}</Title>
                     <Date>{project?.date}</Date>
                     <Tags>
                         {project?.tags?.map((tag, index) => (
-                            <Tag key={index}>{tag}</Tag>
+                            <Tag
+                                key={index}
+                                initial={{ opacity: 0, y: 8 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.3, delay: 0.15 + index * 0.05 }}
+                                whileHover={{ y: -2, scale: 1.05 }}
+                            >
+                                {tag}
+                            </Tag>
                         ))}
                     </Tags>
                     <Desc>{project?.description}</Desc>

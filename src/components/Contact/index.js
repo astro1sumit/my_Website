@@ -1,7 +1,13 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
+import Reveal from "../Reveal";
+import { scaleIn, viewportOnce } from "../../utils/motion";
+import AmbientGlow from "../AmbientGlow";
+import SectionTag from "../SectionTag";
+import { Bio } from "../../data/constants";
 
 const Container = styled.div`
   display: flex;
@@ -131,6 +137,32 @@ const ContactButton = styled.input`
   }
 `;
 
+const ContactDetails = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 8px;
+  font-size: 15px;
+  color: ${({ theme }) => theme.text_secondary};
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    &:hover {
+      color: ${({ theme }) => theme.primary};
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+    gap: 14px;
+  }
+`;
+
+const MotionContactForm = motion(ContactForm);
+
 const Contact = () => {
     const form = useRef();
 
@@ -169,19 +201,44 @@ const Contact = () => {
 
     return (
         <Container>
+            <AmbientGlow
+                colorOne="rgba(255, 126, 179, 0.4)"
+                colorTwo="rgba(133, 76, 230, 0.4)"
+            />
             <Wrapper>
-                <Title>Contact</Title>
-                <Desc>
-                    Feel free to reach out to me for any questions or opportunities!
-                </Desc>
-                <ContactForm ref={form} onSubmit={handleSubmit}>
+                <Reveal>
+                    <SectionTag>07 — Get In Touch</SectionTag>
+                </Reveal>
+                <Reveal delay={0.05}>
+                    <Title>Contact</Title>
+                </Reveal>
+                <Reveal delay={0.1}>
+                    <Desc>
+                        Feel free to reach out to me for any questions or opportunities!
+                    </Desc>
+                </Reveal>
+                <Reveal delay={0.15}>
+                    <ContactDetails>
+                        <a href={`mailto:${Bio.email}`}>✉️ {Bio.email}</a>
+                        <a href={`tel:${Bio.phone.replace(/\s+/g, "")}`}>📞 {Bio.phone}</a>
+                        <span>📍 {Bio.location}</span>
+                    </ContactDetails>
+                </Reveal>
+                <MotionContactForm
+                    ref={form}
+                    onSubmit={handleSubmit}
+                    variants={scaleIn(0.15)}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                >
                     <ContactTitle>Email Me 🚀</ContactTitle>
                     <ContactInput placeholder="Your Email" name="email" />
                     <ContactInput placeholder="Your Name" name="name" />
                     <ContactInput placeholder="Subject" name="subject" />
                     <ContactInputMessage placeholder="Message" rows="4" name="message" />
                     <ContactButton type="submit" value="Send" />
-                </ContactForm>
+                </MotionContactForm>
             </Wrapper>
         </Container>
     );

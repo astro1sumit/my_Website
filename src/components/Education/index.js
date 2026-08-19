@@ -9,6 +9,8 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { education, experiences } from '../../data/constants';
 import EducationCard from '../Cards/EducationCard';
+import Reveal from '../Reveal';
+import SectionTag from '../SectionTag';
 
 const Container = styled.div`
     display: flex;
@@ -81,16 +83,23 @@ const index = () => {
     return (
         <Container id="education">
             <Wrapper>
-                <Title>Education</Title>
-                <Desc>
-                    My education has been a journey of self-discovery and growth. My educational details are as follows.
-                </Desc>
+                <Reveal>
+                    <SectionTag>05 — Education</SectionTag>
+                </Reveal>
+                <Reveal delay={0.05}>
+                    <Title>Education</Title>
+                </Reveal>
+                <Reveal delay={0.1}>
+                    <Desc>
+                        My education has been a journey of self-discovery and growth. My educational details are as follows.
+                    </Desc>
+                </Reveal>
                 <TimelineSection>
                     <Timeline>
                         {education.map((education,index) => (
                             <TimelineItem key={index}>
                                 <TimelineContent sx={{ py: '12px', px: 2 }}>
-                                    <EducationCard education={education}/>
+                                    <EducationCard education={education} index={index}/>
                                 </TimelineContent>
                                 <TimelineSeparator>
                                     <TimelineDot variant="outlined" color="secondary" />

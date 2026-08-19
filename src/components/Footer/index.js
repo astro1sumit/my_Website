@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { Bio } from '../../data/constants';
+import Reveal from '../Reveal';
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -106,23 +108,30 @@ const Copyright = styled.p`
 `;
 
 
+const MotionSocialMediaIcon = motion(SocialMediaIcon);
+
 function Footer() {
     return (
         <FooterContainer>
             <FooterWrapper>
-                <Logo>Sumit Maurya</Logo>
-                <Nav>
-                    <NavLink href="#about">About</NavLink>
-                    <NavLink href="#skills">Skills</NavLink>
-                    <NavLink href="#experience">Experience</NavLink>
-                    <NavLink href="#projects">Projects</NavLink>
-                    <NavLink href="#education">Education</NavLink>
-                </Nav>
+                <Reveal>
+                    <Logo>Sumit Maurya</Logo>
+                </Reveal>
+                <Reveal delay={0.1}>
+                    <Nav>
+                        <NavLink href="#about">About</NavLink>
+                        <NavLink href="#skills">Skills</NavLink>
+                        <NavLink href="#experience">Experience</NavLink>
+                        <NavLink href="#projects">Projects</NavLink>
+                        <NavLink href="#education">Education</NavLink>
+                        <NavLink href="#achievements">Achievements</NavLink>
+                    </Nav>
+                </Reveal>
                 <SocialMediaIcons>
-                    <SocialMediaIcon href={Bio.facebook} target="display"><FacebookIcon /></SocialMediaIcon>
-                    <SocialMediaIcon href={Bio.twitter} target="display"><TwitterIcon /></SocialMediaIcon>
-                    <SocialMediaIcon href={Bio.linkedin} target="display"><LinkedInIcon /></SocialMediaIcon>
-                    <SocialMediaIcon href={Bio.insta} target="display"><InstagramIcon /></SocialMediaIcon>
+                    <MotionSocialMediaIcon href={Bio.facebook} target="display" whileHover={{ scale: 1.2, y: -3 }} whileTap={{ scale: 0.9 }}><FacebookIcon /></MotionSocialMediaIcon>
+                    <MotionSocialMediaIcon href={Bio.twitter} target="display" whileHover={{ scale: 1.2, y: -3 }} whileTap={{ scale: 0.9 }}><TwitterIcon /></MotionSocialMediaIcon>
+                    <MotionSocialMediaIcon href={Bio.linkedin} target="display" whileHover={{ scale: 1.2, y: -3 }} whileTap={{ scale: 0.9 }}><LinkedInIcon /></MotionSocialMediaIcon>
+                    <MotionSocialMediaIcon href={Bio.insta} target="display" whileHover={{ scale: 1.2, y: -3 }} whileTap={{ scale: 0.9 }}><InstagramIcon /></MotionSocialMediaIcon>
                 </SocialMediaIcons>
                 <Copyright>
                     &copy; 2025 Sumit Maurya. All rights reserved.

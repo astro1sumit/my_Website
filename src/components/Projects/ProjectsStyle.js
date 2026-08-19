@@ -118,6 +118,7 @@ export const CardContainer = styled.div`
   gap: 24px;
   flex-wrap: wrap; /* Enabled wrapping for responsive layout */
   padding: 20px 0; /* Added padding */
+  perspective: 1200px;
   @media (max-width: 768px) {
     gap: 16px; /* Reduced gap for smaller screens */
     padding: 16px 0;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const HeroContainer = styled.div`
   background: ${({ theme }) => theme.card_light};
@@ -15,6 +15,73 @@ export const HeroContainer = styled.div`
   z-index: 1;
 
   clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
+`;
+
+const floatOne = keyframes`
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -36px) scale(1.08); }
+`;
+
+const floatTwo = keyframes`
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-36px, 28px) scale(1.1); }
+`;
+
+export const HeroOrbs = styled.div`
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+`;
+
+export const OrbOne = styled.div`
+  position: absolute;
+  top: 8%;
+  left: 6%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(133, 76, 230, 0.55), transparent 70%);
+  filter: blur(70px);
+  animation: ${floatOne} 14s ease-in-out infinite;
+
+  @media (max-width: 768px) {
+    width: 220px;
+    height: 220px;
+  }
+`;
+
+export const OrbTwo = styled.div`
+  position: absolute;
+  bottom: 4%;
+  right: 8%;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 126, 179, 0.4), transparent 70%);
+  filter: blur(70px);
+  animation: ${floatTwo} 16s ease-in-out infinite;
+
+  @media (max-width: 768px) {
+    width: 180px;
+    height: 180px;
+  }
+`;
+
+const shimmer = keyframes`
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+`;
+
+export const GradientText = styled.span`
+  display: inline-block;
+  background: linear-gradient(90deg, #854ce6, #ff7eb3, #854ce6);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ${shimmer} 4s linear infinite;
 `;
 
 export const HeroBg = styled.div`
@@ -79,6 +146,7 @@ export const HeroRightContainer = styled.div`
   order: 2;
   justify-content: end;
   gap: 12px;
+  perspective: 1000px;
   @media (max-width: 960px) {
     order: 1;
     justify-content: center;
@@ -102,11 +170,12 @@ export const Img = styled.img`
   clip-path: ellipse(75% 85% at 50% 50%);
 
   border-radius: 50%;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
 
-  /* Add hover effect */
+  /* Hover scale is handled by framer-motion (whileHover) so it can
+     compose with the floating entrance animation without fighting
+     over the transform property. */
   &:hover {
-    transform: scale(1.05);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
   }
 
@@ -118,6 +187,49 @@ export const Img = styled.img`
   @media (max-width: 640px) {
     max-width: 280px;
     max-height: 320px;
+  }
+`;
+
+const pulse = keyframes`
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(2.6); opacity: 0; }
+`;
+
+export const AvailabilityBadge = styled.div`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 6px 14px 6px 10px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(46, 213, 115, 0.4);
+  background: rgba(46, 213, 115, 0.08);
+  color: #2ed573;
+  font-size: 13px;
+  font-weight: 600;
+
+  @media (max-width: 960px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
+export const StatusDot = styled.span`
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ed573;
+  flex-shrink: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #2ed573;
+    animation: ${pulse} 1.8s ease-out infinite;
   }
 `;
 
@@ -197,11 +309,10 @@ export const ResumeButton = styled.a`
     box-shadow:  20px 20px 60px #1F2634,
     -20px -20px 60px #1F2634;
     &:hover {
-        transform: scale(1.05);
     transition: all 0.4s ease-in-out;
     box-shadow:  20px 20px 60px #1F2634,
     filter: brightness(1);
-    }    
+    }
     
     
     @media (max-width: 640px) {

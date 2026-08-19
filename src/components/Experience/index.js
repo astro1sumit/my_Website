@@ -8,6 +8,8 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import ExperienceCard from '../Cards/ExperienceCard';
 import { experiences } from '../../data/constants';
+import Reveal from '../Reveal';
+import SectionTag from '../SectionTag';
 
 const Container = styled.div`
   display: flex;
@@ -81,10 +83,17 @@ const index = () => {
     return (
         <Container id="experience">
             <Wrapper>
-                <Title>Experience</Title>
-                <Desc>
-                    My work experience as a software engineer and working on different companies and projects.
-                </Desc>
+                <Reveal>
+                    <SectionTag>02 — Experience</SectionTag>
+                </Reveal>
+                <Reveal delay={0.05}>
+                    <Title>Experience</Title>
+                </Reveal>
+                <Reveal delay={0.1}>
+                    <Desc>
+                        My work experience as a software engineer and working on different companies and projects.
+                    </Desc>
+                </Reveal>
                 <TimelineSection>
                     <Timeline>
                         {experiences.map((experience, index) => (
@@ -96,7 +105,7 @@ const index = () => {
                                     )}
                                 </TimelineSeparator>
                                 <TimelineContent sx={{ py: '12px', px: 2 }}>
-                                    <ExperienceCard experience={experience} />
+                                    <ExperienceCard experience={experience} index={index} />
                                 </TimelineContent>
                             </TimelineItem>
                         ))}

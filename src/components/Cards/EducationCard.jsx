@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
+import { fadeUpCard, viewportOnce } from '../../utils/motion'
+import { spotlightOverlay, handleSpotlightMove } from '../../utils/spotlight'
 
 const Document = styled.img`
     display: none;
@@ -44,11 +47,12 @@ const Card = styled.div`
     display: flex;
     flex-direction: column;
     gap: 12px;
-    transition: all 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
     &:hover{
         box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
-        transform: translateY(-5px);
     }
+
+    ${spotlightOverlay()}
     @media only screen and (max-width: 768px){
         padding: 10px;
         gap: 8px;
@@ -128,9 +132,20 @@ const Grade = styled.div`
 
 
 
-const EducationCard = ({ education }) => {
+const MotionCard = motion(Card);
+
+const EducationCard = ({ education, index = 0 }) => {
     return (
-        <Card>
+        <MotionCard
+            custom={index}
+            variants={fadeUpCard}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+            whileHover={{ y: -5 }}
+            transition={{ type: "spring", stiffness: 300, damping: 22 }}
+            onMouseMove={handleSpotlightMove}
+        >
             <Top>
                 <Image src={education.img} />
                 <Body>
@@ -143,7 +158,7 @@ const EducationCard = ({ education }) => {
             <Description>
                 <Span>{education.desc}</Span>
             </Description>
-        </Card>
+        </MotionCard>
     )
 }
 

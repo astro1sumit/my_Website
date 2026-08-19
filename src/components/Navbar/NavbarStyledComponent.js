@@ -1,7 +1,10 @@
 import { Link as LinkR } from "react-router-dom";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const Nav = styled.div`
+  /* Background/blur are driven by framer-motion in index.js (scroll-
+     reactive), so this is just the pre-hydration fallback. */
   background-color: ${({ theme }) => theme.card_light};
   height: 80px;
   display: flex;
@@ -55,19 +58,30 @@ export const NavItems = styled.ul`
 `;
 
 export const NavLink = styled.a`
+  position: relative;
   color: ${({ theme }) => theme.text_primary};
   text-decoration: none;
   font-weight: 600;
   font-size: 16px;
-  transition: all 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 
   &:hover {
     color: ${({ theme }) => theme.primary};
   }
 
   &.active {
-    border-bottom: 2px solid ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.primary};
   }
+`;
+
+export const NavUnderline = styled(motion.span)`
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #854ce6, #ff7eb3);
 `;
 
 export const LinkedInButton = styled.a`

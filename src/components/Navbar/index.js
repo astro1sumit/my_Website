@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
     Nav,
     NavLink,
+    NavUnderline,
     NavbarContainer,
     Span,
     NavLogo,
@@ -34,11 +36,69 @@ const LeetCodeIcon = () => (
     </svg>
 );
 
+const MotionNav = motion(Nav);
+
+const NAV_SECTIONS = [
+    { id: "about", label: "About" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+    { id: "skills", label: "Skills" },
+    { id: "education", label: "Education" },
+];
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("about");
+
+    // Transparent over the hero, glassy once you've scrolled past it.
+    const { scrollY } = useScroll();
+    const navBackground = useTransform(
+        scrollY,
+        [0, 100],
+        ["rgba(25, 25, 36, 0)", "rgba(25, 25, 36, 0.75)"]
+    );
+    const navBlur = useTransform(scrollY, [0, 100], ["blur(0px)", "blur(14px)"]);
+    const navBorder = useTransform(
+        scrollY,
+        [0, 100],
+        ["rgba(133, 76, 230, 0)", "rgba(133, 76, 230, 0.18)"]
+    );
+
+    // Scroll-spy: whichever section currently sits in the middle band of
+    // the viewport gets the animated underline in the desktop nav.
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+        );
+
+        const elements = NAV_SECTIONS.map(({ id }) => document.getElementById(id)).filter(
+            Boolean
+        );
+        elements.forEach((el) => observer.observe(el));
+
+        return () => observer.disconnect();
+    }, []);
 
     return (
-        <Nav>
+        <MotionNav
+            initial={{ y: -80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            style={{
+                backgroundColor: navBackground,
+                backdropFilter: navBlur,
+                WebkitBackdropFilter: navBlur,
+                borderBottom: "1px solid",
+                borderBottomColor: navBorder,
+            }}
+        >
             <NavbarContainer>
                 {/* Logo Section */}
                 <NavLogo to="/">
@@ -61,11 +121,18 @@ const Navbar = () => {
 
                 {/* Desktop Menu */}
                 <NavItems>
-                    <NavLink href="#about">About</NavLink>
-                    <NavLink href="#experience">Experience</NavLink>
-                    <NavLink href="#projects">Projects</NavLink>
-                    <NavLink href="#skills">Skills</NavLink>
-                    <NavLink href="#education">Education</NavLink>
+                    {NAV_SECTIONS.map(({ id, label }) => (
+                        <NavLink
+                            key={id}
+                            href={`#${id}`}
+                            className={activeSection === id ? "active" : ""}
+                        >
+                            {label}
+                            {activeSection === id && (
+                                <NavUnderline layoutId="nav-underline" />
+                            )}
+                        </NavLink>
+                    ))}
 
                     {/* LeetCode Button */}
                     <NavLink
@@ -132,7 +199,7 @@ const Navbar = () => {
                     </GitHubButton>
                 </MobileMenu>
             </NavbarContainer>
-        </Nav>
+        </MotionNav>
     );
 };
 

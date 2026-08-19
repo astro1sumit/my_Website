@@ -1,5 +1,6 @@
 // components/FeaturedProjects/style.js
 import styled from "styled-components";
+import { spotlightOverlay } from "../../utils/spotlight";
 
 export const FeaturedSection = styled.div`
   background: ${({ theme }) => theme.card_light};
@@ -22,6 +23,7 @@ export const ProjectsGrid = styled.div`
   gap: 24px;
   width: 100%;
   max-width: 1200px;
+  perspective: 1200px;
 `;
 
 export const ProjectCard = styled.div`
@@ -29,11 +31,10 @@ export const ProjectCard = styled.div`
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+  /* Hover/entrance scale + fade is handled by framer-motion in
+     index.js so it can compose cleanly with the scroll-in animation. */
 
-  &:hover {
-    transform: scale(1.02);
-  }
+  ${spotlightOverlay("255, 126, 179")}
 `;
 
 export const ProjectImageSlider = styled.div`

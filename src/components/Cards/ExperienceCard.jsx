@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { fadeUpCard, viewportOnce } from '../../utils/motion';
+import { spotlightOverlay, handleSpotlightMove } from '../../utils/spotlight';
 
 const Document = styled.img`
     display: none;
@@ -47,13 +50,16 @@ const Card = styled.div`
     gap: 16px;
     background: linear-gradient(135deg, ${({ theme }) => theme.card}, ${({ theme }) => theme.backgroundAlt});
     border: 1px solid #854CE6;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    transition: box-shadow 0.3s ease, background 0.3s ease;
 
+    /* Lift-on-hover is handled by framer-motion (whileHover) below so
+       it composes with the scroll-in entrance animation. */
     &:hover {
         box-shadow: 0px 6px 32px rgba(23, 92, 230, 0.3);
-        transform: translateY(-8px);
         background: linear-gradient(135deg, #854CE6, ${({ theme }) => theme.card});
     }
+
+    ${spotlightOverlay()}
 
     &:hover ${Document} {
         display: flex;
@@ -170,9 +176,20 @@ const Skill = styled.div`
     }
 `;
 
-const ExperienceCard = ({ experience }) => {
+const MotionCard = motion(Card);
+
+const ExperienceCard = ({ experience, index = 0 }) => {
     return (
-        <Card>
+        <MotionCard
+            custom={index}
+            variants={fadeUpCard}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+            whileHover={{ y: -8 }}
+            transition={{ type: "spring", stiffness: 300, damping: 22 }}
+            onMouseMove={handleSpotlightMove}
+        >
             <Top>
                 <Image src={experience.img} />
                 <Body>
@@ -202,7 +219,7 @@ const ExperienceCard = ({ experience }) => {
                     <Document src={experience.doc} />
                 </a>
             )}
-        </Card>
+        </MotionCard>
     );
 };
 

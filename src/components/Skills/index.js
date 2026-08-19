@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import { skills } from "../../data/constants";
+import Reveal from "../Reveal";
+import { fadeUpCard, viewportOnce } from "../../utils/motion";
+import { spotlightOverlay, handleSpotlightMove } from "../../utils/spotlight";
+import SkillOverview from "./SkillOverview";
+import SectionTag from "../SectionTag";
 
 const Container = styled.div`
   display: flex;
@@ -64,13 +70,16 @@ const Skill = styled.div`
   box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
   border-radius: 16px;
   padding: 18px 36px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
 
+  /* Hover scale is handled by framer-motion (whileHover) so it can
+     compose with the scroll-in entrance animation. */
   &:hover {
-    transform: scale(1.05);
     background: linear-gradient(135deg,rgb(176, 76, 230),rgb(32, 40, 190));
     box-shadow: rgba(23, 92, 230, 0.3) 0px 6px 32px;
   }
+
+  ${spotlightOverlay()}
 
   @media (max-width: 768px) {
     max-width: 400px;
@@ -142,15 +151,35 @@ const SkillImage = styled.img`
   }
 `;
 
+const MotionSkill = motion(Skill);
+
 const Skills = () => {
     return (
         <Container id="skills">
             <Wrapper>
-                <Title>Skills</Title>
-                <Desc>Here are some of my skills on which I have been working.</Desc>
+                <Reveal>
+                    <SectionTag>04 — Skills</SectionTag>
+                </Reveal>
+                <Reveal delay={0.05}>
+                    <Title>Skills</Title>
+                </Reveal>
+                <Reveal delay={0.1}>
+                    <Desc>Here are some of my skills on which I have been working.</Desc>
+                </Reveal>
+                <SkillOverview />
                 <SkillsContainer>
-                    {skills.map((skill) => (
-                        <Skill key={skill.title}>
+                    {skills.map((skill, index) => (
+                        <MotionSkill
+                            key={skill.title}
+                            custom={index}
+                            variants={fadeUpCard}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={viewportOnce}
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 22 }}
+                            onMouseMove={handleSpotlightMove}
+                        >
                             <SkillTitle>{skill.title}</SkillTitle>
                             <SkillList>
                                 {skill.skills.map((item) => (
@@ -160,7 +189,7 @@ const Skills = () => {
                                     </SkillItem>
                                 ))}
                             </SkillList>
-                        </Skill>
+                        </MotionSkill>
                     ))}
                 </SkillsContainer>
             </Wrapper>

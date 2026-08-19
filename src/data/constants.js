@@ -16,18 +16,76 @@ export const Bio = {
     linkedin: "https://www.linkedin.com/in/sumit-maurya-57191a255/",
     Leetcode: "https://leetcode.com/u/ASTROSUMIT/",
     insta: "",
+    email: "sumitkushwaha00001@gmail.com",
+    phone: "+91 9695287622",
+    location: "Noida, UP",
 };
 
 export const featuredProjects = [
     {
-        title: "MysticVibe",
+        title: "CentralWPDA",
+        slug: "centralwpda",
+        description:
+            "🔗 A national registry and guild platform for the Indian film, OTT, television, and digital media industry — verifying creative professionals' identities, registering their works, and connecting them with casting opportunities, jobs, and collaborations. Built with a Talent Directory (searchable database of verified professionals), a Creative Rights Registry (timestamped registration with certificates for scripts, screenplays, stories, lyrics, music, and AI-assisted works), a Casting Portal, an Industry Marketplace for crew hiring, and a Learning & Growth hub for workshops and courses. Ships as a Progressive Web App with 42,300+ verified members, 9,800+ registered works, and 27 state chapters live in production.",
+        images: [
+            "../project/Central.png",
+        ],
+        stack: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "PWA"],
+        url: "https://www.centralwpda.org/index.html",
+    },
+    {
+        title: "BartKart — Marketplace App, Website & Admin Panel",
+        slug: "bartkart",
+        description:
+            "📱🌐 A full-stack peer-to-peer marketplace built as a mobile app, companion website, and internal admin panel — supporting barter, rental, and sale listings, with 40+ screens and end-to-end Supabase integration for auth, database, storage, and realtime updates. The React Native + TypeScript app pairs with a Node.js/Express backend and admin panel using Supabase service-role access for admin operations (KYC review, user bans, listing moderation), enforcing Row-Level Security (RLS) on the client while safely bypassing it server-side for privileged workflows. Reusable cross-platform UI components (image picker, date picker), Razorpay payments, Firebase Cloud Messaging, and TanStack React Query for data fetching/caching, styled with NativeWind (Tailwind for React Native).",
+        images: [
+            "../project/bartkart.png",
+                ],
+        stack: ["React Native", "TypeScript", "Node.js/Express", "Supabase", "Razorpay", "Firebase Cloud Messaging", "RLS"],
+        url: "https://github.com/astro1sumit/BARTKART",
+    },
+    {
+        title: "Load24 — Logistics App, Website & Admin Panel",
+        slug: "load24",
+        description:
+            "📱🌐 A full-stack logistics marketplace delivered as a mobile app, website, and admin panel (React Native + Node/Express + Supabase/PostgreSQL) connecting truck owners and shippers, architected as a monorepo with a mobile client, web frontend, and REST backend. Secure authentication and identity verification including WhatsApp OTP login, MPIN app-lock, and a KYC document upload/verification flow with role-based required-document logic and consent tracking — covering both client-side (RN) and server-side (Express middleware, Supabase RLS) enforcement. The admin panel drives the product's core CRM — client management, lead tracking, and multi-role permissions (Shipper / Vehicle Owner / Staff). End-to-end delivery from database design to API routes to native mobile UI (React Native Paper, NativeWind/Tailwind, React Query).",
+        images: [
+            "../project/Load24.png",
+        ],
+        stack: ["React Native", "Node.js/Express", "Supabase", "PostgreSQL", "React Query", "React Native Paper", "NativeWind"],
+        url: "https://load24.in/",
+    },
+    {
+        title: "AI Call Agent — Healthcare Voice Bot",
+        slug: "ai-call-agent",
+        description:
+            "🎙️ A production-grade AI voice call agent integrated with Twilio Media Streams and WebSockets, enabling real-time phone call handling for a healthcare diagnostic platform (Redcliffe Labs). Integrates Google Gemini AI as the conversational brain and Google Cloud Speech-to-Text / Text-to-Speech for real-time audio transcription and voice synthesis, supporting English and Hindi. A stateful ConversationManager handles multi-turn dialogues, collecting test booking details (phone, city, test name, date, time, collection type) and confirming via SMS using the Fast2SMS API.",
+        images: [
+            "../project/aicall.png",
+        ],
+        stack: ["Python", "FastAPI", "Gemini AI", "Google Speech-to-Text/TTS", "Twilio", "WebSocket", "WebRTC"],
+        url: "https://github.com/astro1sumit",
+    },
+    {
+        title: "MedNexus — RAG-Based Medical Report Summarizer",
+        slug: "mednexus",
+        description:
+            "🩺 An AI-powered medical report summarization platform using Retrieval-Augmented Generation (RAG) to process and summarize medical documents — showcasing LLM integration, information retrieval, scalable AI workflows, and real-world healthcare problem solving.",
+        images: [
+            "../project/Backend-1.png",
+        ],
+        stack: ["Python", "RAG", "LLMs", "NLP", "Vector Database"],
+        url: "https://github.com/astro1sumit",
+    },
+    {
+        title: "Mystic Vibe",
         slug: "mysticvibe",
         description:
-            "🔗 A sophisticated, highly responsive lifestyle and e-commerce platform designed to offer an immersive, modern digital experience. Built to handle complex product showcases and interactive content, the platform blends elegant visual storytelling with robust web architecture. The frontend was crafted using React.js and TypeScript, ensuring a flawless, mobile-first UI with optimized asset-loading, lazy loading, and precise client-side state management for fluid navigation and rapid page transitions. The backend is built on Spring Boot with secure, high-performance RESTful APIs managing media assets, user profiles, and digital content workflows. Relational data persistence is handled via PostgreSQL, with automated CI/CD pipelines through GitHub Actions for continuous delivery.",
+            "🔗 A mobile-first, responsive event-venue booking website built with HTML5, CSS3, JavaScript, and Bootstrap 5. Features a multi-step booking form (event type, guest count, catering), client-side validation, and modal confirmation, demonstrating polished frontend and form UI/UX skills. Deployed on Vercel.",
         images: [
             "../project/mysticvibe.png",
         ],
-        stack: ["React.js", "TypeScript", "Spring Boot", "PostgreSQL", "RESTful API", "CI/CD", "GitHub Actions"],
+        stack: ["HTML5", "CSS3", "JavaScript", "Bootstrap 5", "Vercel"],
         url: "https://www.mysticvibe.in/",
     },
     {
@@ -51,17 +109,6 @@ export const featuredProjects = [
         ],
         stack: ["React.js", "TypeScript", "Spring Boot", "PostgreSQL", "RESTful API", "CI/CD", "GitHub Actions"],
         url: "https://mybuildingguru.com/",
-    },
-    {
-        title: "BARTKART — Full-Stack E-Commerce Platform",
-        slug: "bartkart",
-        description:
-            "🔗 A robust, full-scale e-commerce platform designed to deliver a secure, seamless, and high-performance online shopping experience — from dynamic product discovery to secure order placement. The frontend is built with React.js and TypeScript using modular component architecture for an intuitive, mobile-first UI with smooth product filtering and frictionless checkout. The Spring Boot backend exposes secure RESTful APIs managing inventory, business rules, and JWT-based authentication with role-based access control (RBAC). All relational data including user profiles, catalog inventories, and transaction histories are managed via PostgreSQL, with CI/CD deployment via GitHub Actions.",
-        images: [
-            "../project/bartkart.png",
-                ],
-        stack: ["React.js", "TypeScript", "Spring Boot", "PostgreSQL", "JWT", "RBAC", "RESTful API", "CI/CD", "GitHub Actions"],
-        url: "https://github.com/astro1sumit/BARTKART",
     },
     {
         title: "Full-Stack E-Commerce Platform",
@@ -128,6 +175,11 @@ import xampp from "../images/xampp.svg";
 import pycharm from "../images/pycharm.svg";
 import redis from "../images/redis.svg";
 import swagger from "../images/swagger.svg";
+
+// Small generic placeholder icon (purple dot) for skills without a
+// dedicated logo (e.g. concepts/practices rather than named tools).
+const genericIcon =
+    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIGZpbGw9IiM4NTRjZTYiLz48L3N2Zz4=";
 
 
 export const skills = [
@@ -239,6 +291,115 @@ export const skills = [
                 name: "Swagger",
                 image:swagger,
             },
+            {
+                name: "FastAPI",
+                image:
+                    "https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg",
+            },
+            {
+                name: "Pandas",
+                image:
+                    "https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg",
+            },
+            {
+                name: "NumPy",
+                image:
+                    "https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg",
+            },
+            {
+                name: "Scikit-learn",
+                image:
+                    "https://raw.githubusercontent.com/devicons/devicon/master/icons/scikitlearn/scikitlearn-original.svg",
+            },
+        ],
+    },
+    {
+        title: "AI / LLMs",
+        skills: [
+            {
+                name: "Gemini AI",
+                image:
+                    "https://raw.githubusercontent.com/devicons/devicon/master/icons/google/google-original.svg",
+            },
+            {
+                name: "Google Speech-to-Text / TTS",
+                image:
+                    "https://raw.githubusercontent.com/devicons/devicon/master/icons/google/google-original.svg",
+            },
+            {
+                name: "LangGraph",
+                image: genericIcon,
+            },
+            {
+                name: "Agent-based Workflows",
+                image: genericIcon,
+            },
+            {
+                name: "ML Model Integration",
+                image: genericIcon,
+            },
+        ],
+    },
+    {
+        title: "Cloud & DevOps",
+        skills: [
+            {
+                name: "AWS (S3, EC2)",
+                image:
+                    "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+            },
+            {
+                name: "Docker",
+                image:
+                    "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg",
+            },
+            {
+                name: "GitHub Actions CI/CD",
+                image:
+                    "https://raw.githubusercontent.com/devicons/devicon/master/icons/githubactions/githubactions-original.svg",
+            },
+            {
+                name: "Jenkins",
+                image:
+                    "https://raw.githubusercontent.com/devicons/devicon/master/icons/jenkins/jenkins-original.svg",
+            },
+            {
+                name: "Vercel",
+                image:
+                    "https://raw.githubusercontent.com/devicons/devicon/master/icons/vercel/vercel-original.svg",
+            },
+            {
+                name: "Serverless Architecture",
+                image: genericIcon,
+            },
+            {
+                name: "Microservices",
+                image: genericIcon,
+            },
+        ],
+    },
+    {
+        title: "Databases",
+        skills: [
+            {
+                name: "PostgreSQL",
+                image:
+                    "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg",
+            },
+            {
+                name: "Supabase",
+                image:
+                    "https://raw.githubusercontent.com/devicons/devicon/master/icons/supabase/supabase-original.svg",
+            },
+            {
+                name: "DynamoDB",
+                image:
+                    "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+            },
+            {
+                name: "NoSQL",
+                image: genericIcon,
+            },
         ],
     },
     {
@@ -335,26 +496,27 @@ export const skills = [
 
 import ceaImage from "../images/Untitled design.png";
 import guftguImage from "../images/Untitled design2.png";
+import IOMImage from "../images/IOMImage.png";
 import webpyImage from "../images/webpyImage.png";
 export const experiences = [
     {
         id: 0,
-        img: webpyImage,
-        role: "Full Stack Developer Intern",
-        company: "WebPy SEO Club",
-        date: "Nov 2025 – May 2026",
-        desc: "🚀 6 Months of Full Stack Development Experience. Contributed to 4+ production web applications using React JS, Node.js, HTML, CSS, JavaScript and PostgreSQL within Agile bi-weekly sprints, delivering features consistently with zero critical regressions. Designed and deployed 2+ scalable REST APIs using Spring Boot and Node.js; built CI/CD pipelines and conducted load testing validating stability under 500+ concurrent requests at <200ms response time. Implemented JWT authentication eliminating unauthorized access vulnerabilities across 3+ permission tiers; applied RBAC patterns applicable to dashboard and multi-role product features. Integrated frontend (React JS) with backend services and worked on data-driven UI components including dashboards and reporting interfaces.",
-        skills: ["React JS", "Node.js", "Spring Boot", "PostgreSQL", "JWT", "RBAC", "CI/CD", "REST APIs", "GitHub Actions", "Agile", "HTML", "CSS", "JavaScript", "Load Testing"],
+        img: IOMImage,
+        role: "Software Developer Executive",
+        company: "International Online Media (IOM)",
+        date: "Mar 2026 – Present",
+        desc: "Owned end-to-end delivery of 5+ major features — role-based access, KYC verification, WhatsApp OTP auth — across React Native, Node.js/Express, and Supabase/PostgreSQL, shipping to production on the Google Play Store with zero critical regressions. Architected and shipped Load24, a full-stack logistics marketplace connecting truck owners and shippers, from PostgreSQL schema design on Supabase through a Node.js/Express REST API to a live release on the Google Play Store. Designed the product's core CRM — client management, lead tracking, and multi-role permissions (Shipper / Vehicle Owner / Staff) — on a normalized relational schema with Row-Level Security enforcement. Built and integrated a production AI voice-calling agent (FastAPI, Gemini AI, Twilio Media Streams, Google Speech-to-Text/TTS) for automated real-time customer communication, supporting English and Hindi. Owned the full mobile release lifecycle — build config, Play Store submission, testing, and technical documentation — as the sole/lead developer.",
+        skills: ["React Native", "Node.js", "Express", "Supabase", "PostgreSQL", "RLS", "RBAC", "WhatsApp OTP", "KYC", "FastAPI", "Gemini AI", "Twilio", "Google Speech-to-Text/TTS"],
         doc: "",
     },
     {
         id: 1,
-        img: ceaImage,
-        role: "Web Developer Intern",
-        company: "CEA Department, GLA University",
-        date: "June 2024 - August 2024",
-        desc: "Designed and deployed 20+ responsive web pages, accelerated student portal engagement by 25%. Revitalized UI/UX for Interview site with design team, reducing bounce rate by 18%.",
-        skills: ["Figma", "Ejs", "Canva", "HTML5", "Tailwind CSS", "JavaScript", "React.js", "Node.js","Python","MySQL","Firebase","Git & GitHub","GitLab","GitHub Pages","VS Code","Postman"],
+        img: webpyImage,
+        role: "Full Stack Developer Intern",
+        company: "WebPy SEO Club",
+        date: "Sept 2025 – Feb 2026",
+        desc: "🚀 6 Months of Full Stack Development Experience. Contributed to 4+ production web applications using React JS, Node.js, HTML, CSS, JavaScript and PostgreSQL within Agile bi-weekly sprints, delivering features consistently with zero critical regressions. Designed and deployed 2+ scalable REST APIs using Spring Boot and Node.js; built CI/CD pipelines and conducted load testing validating stability under 500+ concurrent requests at <200ms response time. Implemented JWT authentication eliminating unauthorized access vulnerabilities across 3+ permission tiers; applied RBAC patterns applicable to dashboard and multi-role product features. Integrated frontend (React JS) with backend services and worked on data-driven UI components including dashboards and reporting interfaces.",
+        skills: ["React JS", "Node.js", "Spring Boot", "PostgreSQL", "JWT", "RBAC", "CI/CD", "REST APIs", "GitHub Actions", "Agile", "HTML", "CSS", "JavaScript", "Load Testing"],
         doc: "",
     },
     {
@@ -367,6 +529,16 @@ export const experiences = [
         skills: ["MySQL", "PostgreSQL", "MongoDB", "SQL", "Python", "R", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Plotly","Power BI","PyTorch","Hadoop", "GitHub Actions"],
         doc: "",
     },
+    {
+        id: 3,
+        img: ceaImage,
+        role: "Web Developer Intern",
+        company: "CEA Department, GLA University",
+        date: "June 2024 - August 2024",
+        desc: "Designed and deployed 20+ responsive web pages, accelerated student portal engagement by 25%. Revitalized UI/UX for Interview site with design team, reducing bounce rate by 18%.",
+        skills: ["Figma", "Ejs", "Canva", "HTML5", "Tailwind CSS", "JavaScript", "React.js", "Node.js","Python","MySQL","Firebase","Git & GitHub","GitLab","GitHub Pages","VS Code","Postman"],
+        doc: "",
+    },
 ];
 
 export const education = [
@@ -376,8 +548,42 @@ export const education = [
         school: "GLA University (Mathura, UP)",
         date: "August 2022 - May 2026",
         grade: "7 CGPA",
-        desc: "I am currently pursuing a Bachelor of Information Technolody at GLA University (Mathura, UP). I have completed 7 semesters and have a CGPA of 7. I have taken courses in Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, and Computer Networks,Agile Methodology, among others. I am also a member of the Advance Certificate in Software Engineering, where I am learning and working on exciting projects with a team of talented developers.",
+        desc: "I am currently pursuing a Bachelor of Technology in Computer Science & Engineering at GLA University (Mathura, UP), with a CGPA of 7.0. Relevant coursework includes Data Structures & Algorithms, System Design, Object-Oriented Programming, and Databases, among others. I am also a member of the Advance Certificate in Software Engineering, where I am learning and working on exciting projects with a team of talented developers.",
         degree:"Bachelor of Technology in Computer Science and Engineering",
+    },
+];
+
+export const achievements = [
+    {
+        id: 0,
+        title: "Smart India Hackathon",
+        desc: "Led a team selected for the Top 10 (Software track) out of 200+ competing teams.",
+        tag: "Hackathon",
+    },
+    {
+        id: 1,
+        title: "600+ LeetCode Problems Solved",
+        desc: "Strong problem-solving and algorithmic thinking applicable to debugging complex full-stack issues.",
+        tag: "Problem Solving",
+        link: "https://leetcode.com/u/ASTROSUMIT/",
+    },
+    {
+        id: 2,
+        title: "Postman Student Expert",
+        desc: "Certified for API design, testing, and documentation practices.",
+        tag: "Certification",
+    },
+    {
+        id: 3,
+        title: "Cisco Cybersecurity Essentials",
+        desc: "Certified in core cybersecurity principles and best practices.",
+        tag: "Certification",
+    },
+    {
+        id: 4,
+        title: "NPTEL",
+        desc: "Certified coursework from IIT Guwahati / IIT Kharagpur.",
+        tag: "Certification",
     },
 ];
 
@@ -385,13 +591,33 @@ import hero from "../images/HeroImage.png";
 import image from "../images/MOVIEpage.png";
 export const projects = [
     {
-        id: 25,
-        title: "MysticVibe",
+        id: 29,
+        title: "CentralWPDA",
         date: "2025 - 2026",
         description:
-            "🔗 A sophisticated, highly responsive lifestyle and e-commerce platform designed to offer an immersive, modern digital experience. Built to handle complex product showcases and interactive content, the platform blends elegant visual storytelling with robust web architecture. The frontend was crafted using React.js and TypeScript, ensuring a flawless, mobile-first UI with optimized asset-loading strategies, lazy loading, and precise client-side state management for fluid navigation, rapid page transitions, and a friction-free browsing experience. The backend is built on Spring Boot with secure, high-performance RESTful APIs managing media assets, user profiles, and digital content workflows. Relational data persistence and quick-response querying are handled via PostgreSQL, with automated CI/CD pipelines through GitHub Actions for continuous delivery.",
+            "🔗 A national registry and guild platform for the Indian film, OTT, television, and digital media industry — verifying creative professionals' identities, registering their works, and connecting them with casting opportunities, jobs, and collaborations. Features a Talent Directory, a Creative Rights Registry (timestamped registration with certificates for scripts, screenplays, stories, lyrics, music, and AI-assisted works), a Casting Portal, an Industry Marketplace for crew hiring, and a Learning & Growth hub. Ships as a Progressive Web App with 42,300+ verified members, 9,800+ registered works, and 27 state chapters live in production.",
+        image: "../project/central.png",
+        tags: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "PWA"],
+        category: "Website",
+        github: "https://www.centralwpda.org/index.html",
+        webapp: "https://www.centralwpda.org/index.html",
+        member: [
+            {
+                name: "Sumit Maurya",
+                img: hero,
+                linkedin: "https://www.linkedin.com/in/sumit-maurya-57191a255/",
+                github: "https://github.com/astro1sumit",
+            },
+        ],
+    },
+    {
+        id: 25,
+        title: "Mystic Vibe — Event Venue Website",
+        date: "2025 - 2026",
+        description:
+            "🔗 A mobile-first, responsive event-venue booking website built with HTML5, CSS3, JavaScript, and Bootstrap 5. Features a multi-step booking form (event type, guest count, catering), client-side validation, and modal confirmation, demonstrating polished frontend and form UI/UX skills. Deployed on Vercel.",
         image: "../project/mysticvibe.png",
-        tags: ["React.js", "TypeScript", "Spring Boot", "PostgreSQL", "RESTful API", "CI/CD", "GitHub Actions"],
+        tags: ["HTML5", "CSS3", "JavaScript", "Bootstrap 5", "Vercel"],
         category: "Website",
         github: "https://www.mysticvibe.in/",
         webapp: "https://www.mysticvibe.in/",
@@ -446,15 +672,75 @@ export const projects = [
     },
     {
         id: 24,
-        title: "BARTKART — E-Commerce Platform",
+        title: "BartKart — Marketplace App, Website & Admin Panel",
         date: "2025",
         description:
-            "🔗 A robust, full-scale e-commerce platform designed to deliver a secure, seamless, and high-performance online shopping experience — from dynamic product discovery to secure order placement. The React.js + TypeScript frontend uses modular component architecture for an intuitive, mobile-first UI with smooth product filtering and frictionless checkout. The Spring Boot backend exposes secure RESTful APIs managing inventory, business rules, and JWT-based authentication with role-based access control (RBAC). All relational data including user profiles, catalog inventories, and transaction histories are managed via PostgreSQL, with CI/CD deployment via GitHub Actions.",
+            "📱🌐 A full-stack peer-to-peer marketplace built as a mobile app, companion website, and internal admin panel — supporting barter, rental, and sale listings, with 40+ screens and end-to-end Supabase integration for auth, database, storage, and realtime updates. The React Native + TypeScript app pairs with a Node.js/Express backend and admin panel using Supabase service-role access for admin operations (KYC review, user bans, listing moderation), enforcing Row-Level Security (RLS) on the client while safely bypassing it server-side for privileged workflows. Built with Razorpay payments and Firebase Cloud Messaging, styled with NativeWind (Tailwind for React Native).",
         image: "../project/bartkart.png",
-        tags: ["React.js", "TypeScript", "Spring Boot", "PostgreSQL", "JWT", "RBAC", "RESTful API", "CI/CD", "GitHub Actions"],
-        category: "Website",
+        tags: ["React Native", "TypeScript", "Node.js/Express", "Supabase", "Razorpay", "Firebase Cloud Messaging", "RLS"],
+        category: "App",
         github: "https://github.com/astro1sumit/BARTKART",
         webapp: "https://github.com/astro1sumit/BARTKART",
+        member: [
+            {
+                name: "Sumit Maurya",
+                img: hero,
+                linkedin: "https://www.linkedin.com/in/sumit-maurya-57191a255/",
+                github: "https://github.com/astro1sumit",
+            },
+        ],
+    },
+    {
+        id: 26,
+        title: "Load24 — Logistics App, Website & Admin Panel",
+        date: "2026",
+        description:
+            "📱🌐 A full-stack logistics marketplace delivered as a mobile app, website, and admin panel (React Native + Node/Express + Supabase/PostgreSQL) connecting truck owners and shippers, architected as a monorepo with a mobile client, web frontend, and REST backend. Secure authentication and identity verification including WhatsApp OTP login, MPIN app-lock, and a KYC document upload/verification flow with role-based required-document logic and consent tracking — covering both client-side (RN) and server-side (Express middleware, Supabase RLS) enforcement. The admin panel drives the product's core CRM — client management, lead tracking, and multi-role permissions (Shipper / Vehicle Owner / Staff).",
+        image: "../project/Load24.png",
+        tags: ["React Native", "Node.js/Express", "Supabase", "PostgreSQL", "React Query", "React Native Paper", "NativeWind"],
+        category: "App",
+        github: "https://load24.in/",
+        webapp: "https://load24.in/",
+        member: [
+            {
+                name: "Sumit Maurya",
+                img: hero,
+                linkedin: "https://www.linkedin.com/in/sumit-maurya-57191a255/",
+                github: "https://github.com/astro1sumit",
+            },
+        ],
+    },
+    {
+        id: 27,
+        title: "AI Call Agent — Healthcare Voice Bot",
+        date: "2026",
+        description:
+            "🎙️ A production-grade AI voice call agent integrated with Twilio Media Streams and WebSockets, enabling real-time phone call handling for a healthcare diagnostic platform (Redcliffe Labs). Integrates Google Gemini AI as the conversational brain and Google Cloud Speech-to-Text / Text-to-Speech for real-time audio transcription and voice synthesis, supporting English and Hindi. A stateful ConversationManager handles multi-turn dialogues, collecting test booking details and confirming via SMS using the Fast2SMS API.",
+        image: "../project/ai-blog-1.png",
+        tags: ["Python", "FastAPI", "Gemini AI", "Google Speech-to-Text/TTS", "Twilio", "WebSocket", "WebRTC"],
+        category: "Backend",
+        github: "https://github.com/astro1sumit",
+        webapp: "https://github.com/astro1sumit",
+        member: [
+            {
+                name: "Sumit Maurya",
+                img: hero,
+                linkedin: "https://www.linkedin.com/in/sumit-maurya-57191a255/",
+                github: "https://github.com/astro1sumit",
+            },
+        ],
+    },
+    {
+        id: 28,
+        title: "MedNexus — RAG-Based Medical Report Summarizer",
+        date: "2026",
+        description:
+            "🩺 An AI-powered medical report summarization platform using Retrieval-Augmented Generation (RAG) to process and summarize medical documents — showcasing LLM integration, information retrieval, scalable AI workflows, and real-world healthcare problem solving.",
+        image: "../project/Backend-1.png",
+        tags: ["Python", "RAG", "LLMs", "NLP", "Vector Database"],
+        category: "Backend",
+        github: "https://github.com/astro1sumit",
+        webapp: "https://github.com/astro1sumit",
         member: [
             {
                 name: "Sumit Maurya",

@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import {
     Container,
     Wrapper,
@@ -12,18 +13,29 @@ import {
 } from "./ProjectsStyle";
 import ProjectCard from "../Cards/ProjectCards";
 import { projects } from "../../data/constants";
+import Reveal from "../Reveal";
+import AmbientGlow from "../AmbientGlow";
+import SectionTag from "../SectionTag";
 
 
 const Projects = ({ openModal, setOpenModal }) => {
     const [toggle, setToggle] = useState("all");
     return (
         <Container id="projects">
+            <AmbientGlow />
             <Wrapper>
-                <Title>Projects</Title>
-                <Desc>
-                    I have worked on a wide range of projects. From web apps to crms. Here
-                    are some of my projects.
-                </Desc>
+                <Reveal>
+                    <SectionTag>03 — Projects</SectionTag>
+                </Reveal>
+                <Reveal delay={0.05}>
+                    <Title>Projects</Title>
+                </Reveal>
+                <Reveal delay={0.1}>
+                    <Desc>
+                        I have worked on a wide range of projects. From web apps to crms. Here
+                        are some of my projects.
+                    </Desc>
+                </Reveal>
                 <ToggleButtonGroup>
                     {toggle === "all" ? (
                         <ToggleButton active value="all" onClick={() => setToggle("all")}>
@@ -91,19 +103,22 @@ const Projects = ({ openModal, setOpenModal }) => {
                     )}
                 </ToggleButtonGroup>
                 <CardContainer>
-                    {projects
-                        .filter(
-                            (project) =>
-                                toggle === "all" ||
-                                project.category.toLowerCase() === toggle.toLowerCase()
-                        )
-                        .map((project,index) => (
-                            <ProjectCard key={index}
-                                         project={project}
-                                         openModal={openModal}
-                                         setOpenModal={setOpenModal}
-                            />
-                        ))}
+                    <AnimatePresence mode="popLayout">
+                        {projects
+                            .filter(
+                                (project) =>
+                                    toggle === "all" ||
+                                    project.category.toLowerCase() === toggle.toLowerCase()
+                            )
+                            .map((project, index) => (
+                                <ProjectCard key={project.id}
+                                             project={project}
+                                             index={index}
+                                             openModal={openModal}
+                                             setOpenModal={setOpenModal}
+                                />
+                            ))}
+                    </AnimatePresence>
                 </CardContainer>
             </Wrapper>
         </Container>

@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import { fadeUpCard, viewportOnce } from "../../utils/motion";
+import { spotlightOverlay, handleSpotlightMove } from "../../utils/spotlight";
+import { useTilt } from "../../utils/useTilt";
 
 const Button = styled.button`
   position: absolute;
@@ -36,10 +40,11 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transition: all 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out;
 
+  /* The lift itself is handled by framer-motion (whileHover) on the
+     motion-wrapped card so it composes with the scroll-in entrance. */
   &:hover {
-    transform: translateY(-10px);
     box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.4);
     filter: brightness(1.1);
   }
@@ -48,6 +53,8 @@ const Card = styled.div`
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
+
+  ${spotlightOverlay()}
 `;
 
 const Image = styled.img`
@@ -56,6 +63,11 @@ const Image = styled.img`
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease;
+
+  ${Card}:hover & {
+    transform: scale(1.07);
+  }
 `;
 
 const Tags = styled.div`
@@ -120,9 +132,29 @@ const Avatar = styled.img`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 `;
 
-const ProjectCards = ({ project, setOpenModal }) => {
+const MotionCard = motion(Card);
+
+const ProjectCards = ({ project, setOpenModal, index = 0 }) => {
+    const { rotateX, rotateY, handleTiltMove, resetTilt } = useTilt(8);
+
     return (
-        <Card onClick={() => setOpenModal({ state: true, project: project })}>
+        <MotionCard
+            custom={index}
+            variants={fadeUpCard}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+            exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.25 } }}
+            whileHover={{ y: -10 }}
+            transition={{ type: "spring", stiffness: 300, damping: 22 }}
+            style={{ rotateX, rotateY }}
+            onClick={() => setOpenModal({ state: true, project: project })}
+            onMouseMove={(e) => {
+                handleSpotlightMove(e);
+                handleTiltMove(e);
+            }}
+            onMouseLeave={resetTilt}
+        >
             <Image src={project.image} />
             <Tags>
                 {project.tags?.map((tag, index) => (
@@ -140,7 +172,7 @@ const ProjectCards = ({ project, setOpenModal }) => {
                 ))}
             </Members>
             <Button>View Project</Button>
-        </Card>
+        </MotionCard>
     );
 };
 
